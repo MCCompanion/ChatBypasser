@@ -1,0 +1,38 @@
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local JoinButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Instructions Message
+TextLabel.Parent = ScreenGui
+TextLabel.Text = "Join our Discord server for the script! And we post daily scripts that you wont find on any website"
+TextLabel.Size = UDim2.new(0, 400, 0, 100)
+TextLabel.Position = UDim2.new(0.5, -200, 0.5, -150)
+TextLabel.TextScaled = true
+
+-- Join Discord Button
+JoinButton.Parent = ScreenGui
+JoinButton.Text = "Join Discord"
+JoinButton.Size = UDim2.new(0, 200, 0, 50)
+JoinButton.Position = UDim2.new(0.5, -100, 0.5, -50)
+
+JoinButton.MouseButton1Click:Connect(function()
+    -- Copy Discord invite link to clipboard
+    if setclipboard then
+        setclipboard("https://discord.gg/syJ3fw4Kd9")
+        -- Notify the player that the link has been copied
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Copied to Clipboard!";
+            Text = "Discord invite link copied. Paste it in your browser.";
+            Duration = 5;
+        })
+    else
+        -- Fallback message if setclipboard doesn't work
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Copy Failed!";
+            Text = "Unable to copy. Please manually join: https://discord.gg/syJ3fw4Kd9";
+            Duration = 5;
+        })
+    end
+end)
