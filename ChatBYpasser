@@ -31,7 +31,7 @@ JoinButton.MouseButton1Click:Connect(function()
         -- Fallback message if setclipboard doesn't work
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Copy Failed!";
-            Text = "Unable to copy. Please manually join: https://discord.gg/syJ3fw4Kd9";
+            Text = "Unable to copy. Please manually join: https://discord.gg/MbNGmaSyd2";
             Duration = 5;
         })
     end
