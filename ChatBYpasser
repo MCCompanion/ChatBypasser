@@ -20,7 +20,7 @@ JoinButton.Position = UDim2.new(0.5, -100, 0.5, -50)
 JoinButton.MouseButton1Click:Connect(function()
     -- Copy Discord invite link to clipboard
     if setclipboard then
-        setclipboard("https://discord.gg/syJ3fw4Kd9")
+        setclipboard("https://discord.gg/MbNGmaSyd2")
         -- Notify the player that the link has been copied
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Copied to Clipboard!";
